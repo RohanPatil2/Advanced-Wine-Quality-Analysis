@@ -204,271 +204,298 @@ python visualize.py --report all
 
 ---
 
-This improved usage guide ensures clarity and ease of use for both end-users and developers, providing all the necessary steps to install, run, and extend the wine quality analysis system.
+Below is a refined and more descriptive version of the Visualization Gallery. Each graph is clearly labeled with an explanation of its purpose, interpretation guidelines, and key insights:
+
+---
+
+## 📊 Visualization Gallery
+
 ### Graph 1: Histogram of Feature Distributions
 ![Histogram](images/1.png)
-**📊 What it Represents:**  
-Distribution of 11 physicochemical properties across 6,497 wines
 
-**🔍 How to Interpret:**  
-- Normal distribution = Balanced data  
-- Right skew = Potential outliers
-
-**💡 Insight Analysis:**  
-Alcohol content shows bimodal distribution (11.5% and 13.5% peaks), suggesting distinct wine styles
+- **What it Represents:**  
+  The histogram illustrates the distribution of 11 physicochemical properties across a dataset of 6,497 wines.
+  
+- **How to Interpret:**  
+  - **Normal Distribution:** Indicates balanced data for a given property.  
+  - **Right Skew:** Suggests potential outliers or a concentration of lower values.
+  
+- **Insight Analysis:**  
+  Alcohol content exhibits a bimodal distribution with peaks at approximately 11.5% and 13.5%, hinting at the presence of distinct wine styles.
 
 ---
 
 ### Graph 2: Boxplots of Feature Distributions
 ![Boxplots](images/2.png)
-**📊 What it Represents:**  
-Spread and outliers for each chemical property
 
-**🔍 How to Interpret:**  
-- Wide IQR = High variance  
-- Outliers = Measurement errors
-
-**💡 Insight Analysis:**  
-Volatile acidity has 8% outliers - crucial for quality control
+- **What it Represents:**  
+  Boxplots summarize the spread and detect outliers for each chemical property.
+  
+- **How to Interpret:**  
+  - **Wide IQR (Interquartile Range):** Implies high variance in the data.  
+  - **Outliers:** May indicate measurement errors or exceptional cases.
+  
+- **Insight Analysis:**  
+  About 8% of the values for volatile acidity are considered outliers, which could be critical for maintaining quality control.
 
 ---
 
 ### Graph 3: Pairplot of Selected Features
 ![Pairplot](images/3.png)
-**📊 What it Represents:**  
-Interactions between alcohol, pH, and sulphates
 
-**🔍 How to Interpret:**  
-- Linear patterns = Correlations  
-- Diagonal histograms = Feature distributions
-
-**💡 Insight Analysis:**  
-Alcohol vs Density shows strong inverse relationship (r = -0.78)
+- **What it Represents:**  
+  This pairplot visualizes pairwise relationships among selected features such as alcohol, pH, and sulphates.
+  
+- **How to Interpret:**  
+  - **Linear Patterns:** Suggest a correlation between features.  
+  - **Diagonal Histograms:** Display the individual feature distributions.
+  
+- **Insight Analysis:**  
+  The scatter plot between alcohol and density reveals a strong inverse relationship (correlation coefficient of approximately -0.78).
 
 ---
 
 ### Graph 4: Correlation Heatmap
 ![Heatmap](images/4.png)
-**📊 What it Represents:**  
-Pearson correlations between 11 features
 
-**🔍 How to Interpret:**  
-- Red = Positive correlation  
-- Blue = Negative correlation
-
-**💡 Insight Analysis:**  
-Alcohol-quality correlation (0.48) is strongest among all features
+- **What it Represents:**  
+  The heatmap presents Pearson correlation coefficients among all 11 features.
+  
+- **How to Interpret:**  
+  - **Red Shades:** Indicate positive correlations.  
+  - **Blue Shades:** Indicate negative correlations.
+  
+- **Insight Analysis:**  
+  The highest correlation is observed between alcohol content and wine quality (0.48), making it the most influential feature in the dataset.
 
 ---
 
 ### Graph 5: Wine Quality Distribution by Type
 ![Quality Distribution](images/5.png)
-**📊 What it Represents:**  
-Quality scores for red vs white wines
 
-**🔍 How to Interpret:**  
-- Narrow range = Predictable quality  
-- Wide spread = Variable quality
-
-**💡 Insight Analysis:**  
-White wines show wider quality range (3-9 vs red's 4-8)
+- **What it Represents:**  
+  This chart compares the quality score distributions between red and white wines.
+  
+- **How to Interpret:**  
+  - **Narrow Range:** Implies more predictable quality scores.  
+  - **Wide Range:** Indicates higher variability in quality.
+  
+- **Insight Analysis:**  
+  White wines demonstrate a broader quality range (scores between 3-9) compared to red wines (scores between 4-8).
 
 ---
 
 ### Graph 6: Alcohol vs Quality Scatter Plot
 ![Alcohol-Quality](images/6.png)
-**📊 What it Represents:**  
-Relationship between ABV% and expert scores
 
-**🔍 How to Interpret:**  
-- Upward trend = Positive correlation  
-- Vertical spread = Other factors matter
-
-**💡 Insight Analysis:**  
-Wines above 13% ABV have 62% higher chance of scoring ≥7
+- **What it Represents:**  
+  A scatter plot showing the relationship between alcohol by volume (ABV%) and expert quality ratings.
+  
+- **How to Interpret:**  
+  - **Upward Trend:** A positive correlation between higher alcohol content and quality.  
+  - **Vertical Spread:** Suggests that additional factors influence quality.
+  
+- **Insight Analysis:**  
+  Wines with an alcohol percentage above 13% are 62% more likely to achieve a quality rating of 7 or higher.
 
 ---
 
 ### Graph 7: 3D Engineered Features Plot
 ![3D Plot](images/7.png)
-**📊 What it Represents:**  
-Interactions between created features
 
-**🔍 How to Interpret:**  
-- Clusters = Similar wine profiles  
-- Overlaps = Complex relationships
-
-**💡 Insight Analysis:**  
-High alcohol_pressure + low sulfur_decay defines premium wines
+- **What it Represents:**  
+  A three-dimensional visualization of engineered features that capture complex interactions among the original properties.
+  
+- **How to Interpret:**  
+  - **Clusters:** Indicate similar wine profiles.  
+  - **Overlapping Regions:** Represent complex, non-linear relationships.
+  
+- **Insight Analysis:**  
+  The combination of high “alcohol_pressure” and low “sulfur_decay” is characteristic of premium wines.
 
 ---
 
 ### Graph 8: SHAP Summary Plot
 ![SHAP](images/8.png)
-**📊 What it Represents:**  
-Feature importance in model predictions
 
-**🔍 How to Interpret:**  
-- Right = Positive impact  
-- Left = Negative impact
-
-**💡 Insight Analysis:**  
-Alcohol contributes 38% of prediction power - dominant factor
+- **What it Represents:**  
+  A summary plot from SHAP (SHapley Additive exPlanations) that quantifies the impact of each feature on the model's predictions.
+  
+- **How to Interpret:**  
+  - **Right Side:** Features that push predictions higher.  
+  - **Left Side:** Features that push predictions lower.
+  
+- **Insight Analysis:**  
+  Alcohol content is the dominant factor, contributing approximately 38% of the model's predictive power.
 
 ---
 
 ### Graph 9: SHAP Dependence Plot
 ![Dependence](images/9.png)
-**📊 What it Represents:**  
-Feature effect on predictions
 
-**🔍 How to Interpret:**  
-- Linear trend = Direct relationship  
-- Curves = Non-linear effects
-
-**💡 Insight Analysis:**  
-pH shows U-shaped relationship - optimal range 3.0-3.4
+- **What it Represents:**  
+  This plot displays the effect of a single feature on the model predictions while accounting for interactions with other features.
+  
+- **How to Interpret:**  
+  - **Linear Trend:** Suggests a straightforward, direct relationship.  
+  - **Curved Pattern:** Indicates non-linear effects.
+  
+- **Insight Analysis:**  
+  The pH level exhibits a U-shaped relationship with quality, with an optimal range between 3.0 and 3.4.
 
 ---
 
 ### Graph 10: Permutation Feature Importance
 ![Feature Importance](images/10.png)
-**📊 What it Represents:**  
-Impact on model accuracy
 
-**🔍 How to Interpret:**  
-- Tall bars = Critical features  
-- Short bars = Redundant features
-
-**💡 Insight Analysis:**  
-Density contributes <2% importance - safe to remove
+- **What it Represents:**  
+  Bar chart showing the relative importance of each feature based on permutation importance, which evaluates the impact of feature shuffling on model accuracy.
+  
+- **How to Interpret:**  
+  - **Tall Bars:** Critical features for model performance.  
+  - **Short Bars:** Features that may be redundant.
+  
+- **Insight Analysis:**  
+  Density is less influential, contributing less than 2% to the model's accuracy, suggesting it could be removed or deprioritized.
 
 ---
 
 ### Graph 11: Residual Distribution
 ![Residuals](images/11.png)
-**📊 What it Represents:**  
-Prediction error analysis
 
-**🔍 How to Interpret:**  
-- Normal shape = Good fit  
-- Skew = Systematic bias
-
-**💡 Insight Analysis:**  
-Model underestimates premium wines (negative skew)
+- **What it Represents:**  
+  A histogram of the residuals (errors) from the model predictions.
+  
+- **How to Interpret:**  
+  - **Normal (Gaussian) Shape:** Indicates a good fit.  
+  - **Skewed Distribution:** Points to systematic bias.
+  
+- **Insight Analysis:**  
+  The model tends to underestimate premium wines, as evidenced by a negative skew in the residual distribution.
 
 ---
 
 ### Graph 12: Actual vs Predicted Plot
 ![Actual-Predicted](images/12.png)
-**📊 What it Represents:**  
-Model performance visualization
 
-**🔍 How to Interpret:**  
-- Diagonal alignment = Accurate predictions  
-- Spread = Error magnitude
-
-**💡 Insight Analysis:**  
-87% predictions within ±0.5 quality points
+- **What it Represents:**  
+  A scatter plot comparing the actual quality scores with the predicted scores.
+  
+- **How to Interpret:**  
+  - **Diagonal Alignment:** Ideal scenario where predictions closely match actual values.  
+  - **Spread Around the Diagonal:** Represents the error magnitude.
+  
+- **Insight Analysis:**  
+  Approximately 87% of the predictions fall within ±0.5 quality points of the actual scores.
 
 ---
 
 ### Graph 13: Absolute Errors Boxplot
 ![Errors](images/13.png)
-**📊 What it Represents:**  
-Error distribution analysis
 
-**🔍 How to Interpret:**  
-- Narrow box = Consistent performance  
-- Outliers = Hard cases
-
-**💡 Insight Analysis:**  
-5% outliers (errors >1.5 points) need investigation
+- **What it Represents:**  
+  A boxplot showcasing the distribution of absolute errors in the model's predictions.
+  
+- **How to Interpret:**  
+  - **Narrow Box:** Indicates consistent performance.  
+  - **Outliers:** Highlight cases where the model struggled.
+  
+- **Insight Analysis:**  
+  Around 5% of the predictions have errors exceeding 1.5 quality points, warranting further investigation.
 
 ---
 
 ### Graph 14: Parallel Coordinates Plot
 ![Parallel](images/14.png)
-**📊 What it Represents:**  
-Multi-feature relationships
 
-**🔍 How to Interpret:**  
-- Parallel lines = Stable ratios  
-- Crossings = Complex interactions
-
-**💡 Insight Analysis:**  
-Premium wines maintain alcohol/sulphates ratio >20:1
+- **What it Represents:**  
+  A parallel coordinates plot that visualizes the relationships and interactions across multiple features simultaneously.
+  
+- **How to Interpret:**  
+  - **Parallel Lines:** Indicate stable ratios among features.  
+  - **Crossing Lines:** Suggest complex interactions.
+  
+- **Insight Analysis:**  
+  Premium wines tend to maintain an alcohol-to-sulphates ratio greater than 20:1.
 
 ---
 
 ### Graph 15: Sulfur Ratio vs Quality
 ![Sulfur](images/15.png)
-**📊 What it Represents:**  
-Sulfur dioxide impact
 
-**🔍 How to Interpret:**  
-- Dark areas = Common combinations  
-- Trends = Directional impact
-
-**💡 Insight Analysis:**  
-Optimal free/total sulfur ratio: 0.25-0.35
+- **What it Represents:**  
+  A plot demonstrating the impact of the free-to-total sulfur dioxide ratio on wine quality.
+  
+- **How to Interpret:**  
+  - **Concentrated Dark Areas:** Reflect commonly occurring ratios.  
+  - **Directional Trends:** Show the impact on quality scores.
+  
+- **Insight Analysis:**  
+  The optimal free-to-total sulfur ratio for maintaining quality lies between 0.25 and 0.35.
 
 ---
 
 ### Graph 16: Correlation Network
 ![Network](images/16.png)
-**📊 What it Represents:**  
-Feature relationships
 
-**🔍 How to Interpret:**  
-- Thick lines = Strong correlations  
-- Hubs = Key features
-
-**💡 Insight Analysis:**  
-Alcohol is central hub connecting 7 features
+- **What it Represents:**  
+  A network diagram illustrating the relationships among features based on their correlation strengths.
+  
+- **How to Interpret:**  
+  - **Thick Lines:** Denote strong correlations.  
+  - **Hubs:** Identify key features that influence several others.
+  
+- **Insight Analysis:**  
+  Alcohol serves as a central hub, connecting with 7 other features, highlighting its pivotal role in determining quality.
 
 ---
 
 ### Graph 17: XGBoost Feature Importance
 ![XGBoost](images/17.png)
-**📊 What it Represents:**  
-Tree-based importance
 
-**🔍 How to Interpret:**  
-- Higher = More important  
-- Lower = Less important
-
-**💡 Insight Analysis:**  
-Engineered features capture 34% importance
+- **What it Represents:**  
+  A bar chart derived from XGBoost’s built-in feature importance metrics.
+  
+- **How to Interpret:**  
+  - **Higher Bars:** More significant features for the decision-making process.  
+  - **Lower Bars:** Less influential features.
+  
+- **Insight Analysis:**  
+  Engineered features contribute about 34% to the overall importance, underscoring the value of feature engineering.
 
 ---
 
 ### Graph 18: Predicted Quality Distribution
 ![Predictions](images/18.png)
-**📊 What it Represents:**  
-Model output analysis
 
-**🔍 How to Interpret:**  
-- Peaks = Common predictions  
-- Spread = Confidence range
-
-**💡 Insight Analysis:**  
-Model avoids extreme predictions (5-7 range)
+- **What it Represents:**  
+  A histogram showing the distribution of the model’s predicted quality scores.
+  
+- **How to Interpret:**  
+  - **Distinct Peaks:** Indicate common prediction outcomes.  
+  - **Wide Spread:** Reflects the model’s confidence range.
+  
+- **Insight Analysis:**  
+  The model tends to avoid extreme predictions, concentrating most predictions in the 5–7 range.
 
 ---
 
 ### Graph 19: Residuals vs Predicted
 ![Residuals-Predicted](images/19.png)
-**📊 What it Represents:**  
-Error pattern analysis
 
-**🔍 How to Interpret:**  
-- Horizontal band = Homoscedasticity  
-- Funnel shape = Heteroscedasticity
+- **What it Represents:**  
+  A scatter plot comparing the model's residuals against the predicted quality scores.
+  
+- **How to Interpret:**  
+  - **Horizontal Band:** Implies homoscedasticity (uniform error variance).  
+  - **Funnel Shape:** Indicates heteroscedasticity (variance increases with predictions).
+  
+- **Insight Analysis:**  
+  There is an increase in errors for higher predicted quality scores, suggesting that the model’s performance varies with the quality level.
 
-**💡 Insight Analysis:**  
-Errors increase for high-quality predictions
+---
 
+This detailed gallery provides both the visualizations and the context needed to understand and interpret each plot. The insights derived from these graphs support effective troubleshooting, model refinement, and informed decision-making.
 ---
 
 ## 🧠 Model Architecture
