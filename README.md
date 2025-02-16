@@ -551,6 +551,9 @@ curl -X POST "http://api.winequality.ai/predict" \
 ```
 
 ---
+# Cell 10: Quantum Leap (Experimental)
+This section represents an experimental phase of the project where we explore novel methodologies and cutting-edge techniques to further enhance wine quality prediction. Quantum Leap (Experimental) serves as a sandbox for testing innovative ideas that may eventually be integrated into the core system.
+Note: This cell is under active development. Contributions and feedback on these experimental features are highly encouraged.
 
 ## 📚 References
 1. **UCI Wine Quality Dataset:** The dataset is sourced from the UCI Machine Learning Repository, which offers a rich collection of real-world datasets for research purposes.
