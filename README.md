@@ -551,9 +551,6 @@ curl -X POST "http://api.winequality.ai/predict" \
 ```
 
 ---
-Below is an updated README section for **Cell 10: Quantum Leap (Experimental)**, including the experimental code snippet:
-
----
 
 ## # Cell 10: Quantum Leap (Experimental)
 
