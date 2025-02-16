@@ -2,9 +2,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+This repository hosts a comprehensive machine learning system for predicting wine quality based on detailed physicochemical measurements—such as alcohol content, acidity, sulfur levels, and more. The project leverages ensemble modeling (XGBoost, LightGBM, CatBoost, and Neural Networks) to achieve robust performance and uses explainable AI techniques (e.g., SHAP) to provide transparent insights into how each feature impacts the final quality score. By combining these approaches, the solution not only delivers highly accurate predictions of expert ratings but also highlights the key factors driving wine excellence.
 
-A machine learning-powered wine quality prediction system analyzing physicochemical properties to predict expert ratings. Combines ensemble modeling with explainable AI for transparent insights.
 
 ## :ledger: Index
 
@@ -41,93 +40,171 @@ Dataset: 6,497 wines (1,599 red, 4,898 white) from UCI Machine Learning Reposito
 
 ## :zap: Usage
 
-###  :electric_plug: Installation
+This section provides detailed instructions to set up the project, run the analysis pipeline, and launch the prediction API. Follow the steps below to get started.
 
-**Requirements:**
+---
+
+### :electric_plug: Installation
+
+#### **Requirements:**
 - Python 3.8+
-- pip >=20.0
+- pip (version 20.0 or above)
 
-# Clone repository
-'''
-git clone https://github.com/yourusername/wine-quality-analysis.git
-cd wine-quality-analysis
-'''
-# Create virtual environment
-'''
-python -m venv venv
-source venv/bin/activate  # Linux/MacOS
-venv\Scripts\activate  # Windows
-'''
+#### **Steps:**
 
-# Install dependencies
-'''
-pip install -r requirements.txt
-:package: Commands
-# Run full analysis pipeline
-python main.py --full-analysis
-'''
-# Start prediction API
-uvicorn api.wine_api:app --reload
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/wine-quality-analysis.git
+   cd wine-quality-analysis
+   ```
 
-# Generate visualization reports
-python visualize.py --report all
-:wrench: Development
-:notebook: Pre-Requisites
-Python 3.8+
+2. **Create and Activate a Virtual Environment:**
 
-Jupyter Lab
+   - **Linux/MacOS:**
+     ```bash
+     python -m venv venv
+     source venv/bin/activate
+     ```
 
-Docker (for deployment)
+   - **Windows:**
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```
 
-GPU with CUDA support (optional)
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-:nut_and_bolt: Development Environment
-bash
-Copy
-# Install development dependencies
-pip install -r requirements-dev.txt
+---
 
-# Setup pre-commit hooks
-pre-commit install
+### :package: Commands
 
-# Launch Jupyter lab
-jupyter lab
-:file_folder: File Structure
-Copy
+After installation, you can use the following commands to execute various tasks:
+
+- **Run the Full Analysis Pipeline:**
+  ```bash
+  python main.py --full-analysis
+  ```
+
+- **Start the Prediction API (using FastAPI):**
+  ```bash
+  uvicorn api.wine_api:app --reload
+  ```
+
+- **Generate Visualization Reports:**
+  ```bash
+  python visualize.py --report all
+  ```
+
+---
+
+### :wrench: Development
+
+For developers looking to contribute or extend the project, follow the instructions below.
+
+#### :notebook: Pre-Requisites
+
+- **Python 3.8+**
+- **Jupyter Lab:** For interactive exploratory data analysis (EDA).
+- **Docker:** For containerized deployment.
+- **GPU with CUDA support:** Optional, for accelerated model training.
+
+#### :nut_and_bolt: Development Environment Setup
+
+1. **Install Development Dependencies:**
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+
+2. **Setup Pre-Commit Hooks (for code quality):**
+   ```bash
+   pre-commit install
+   ```
+
+3. **Launch Jupyter Lab:**
+   ```bash
+   jupyter lab
+   ```
+
+---
+
+### :file_folder: File Structure
+
+The project is organized as follows:
+
+```
 ├── api
-│   └── wine_api.py         # FastAPI endpoint
+│   └── wine_api.py         # FastAPI endpoint for predictions
 ├── data
-│   ├── processed           # Cleaned datasets
-│   └── raw                 # Original CSV files
+│   ├── processed           # Cleaned and processed datasets
+│   └── raw                 # Original CSV files from UCI
 ├── models
-│   └── ensemble.pkl        # Trained model
+│   └── ensemble.pkl        # Trained ensemble model
 ├── notebooks
-│   └── analysis.ipynb      # EDA notebook
+│   └── analysis.ipynb      # Exploratory Data Analysis (EDA) notebook
 ├── src
-│   ├── data_loader.py      # Data loading module
-│   ├── feature_engine.py   # Feature engineering
-│   └── models.py           # Model definitions
-└── tests                   # Unit tests
-:hammer: Build
-bash
-Copy
-# Build Docker image
-docker build -t wine-quality-api .
+│   ├── data_loader.py      # Module for data ingestion
+│   ├── feature_engine.py   # Feature engineering scripts
+│   └── models.py           # Model definitions and utilities
+└── tests
+    └── test_models.py      # Unit tests for model components
+```
 
-# Run tests
-python -m pytest tests/
-:rocket: Deployment
-AWS EC2 Deployment:
+---
 
-bash
-Copy
-# Pull Docker image
-docker pull username/wine-quality-api:latest
+### :hammer: Build
 
-# Run container
-docker run -d -p 8000:8000 wine-quality-api
-## 📊 Visualization Gallery
+Use the following commands to build the Docker image and run tests:
 
+- **Build Docker Image:**
+  ```bash
+  docker build -t wine-quality-api .
+  ```
+
+- **Run Unit Tests:**
+  ```bash
+  python -m pytest tests/
+  ```
+
+---
+
+### :rocket: Deployment
+
+#### **AWS EC2 Deployment:**
+
+1. **Pull the Docker Image:**
+   ```bash
+   docker pull username/wine-quality-api:latest
+   ```
+
+2. **Run the Container:**
+   ```bash
+   docker run -d -p 8000:8000 wine-quality-api
+   ```
+
+This setup allows the application to run in a containerized environment, ensuring consistency across different deployment platforms.
+
+---
+
+### :bar_chart: Visualization Gallery
+
+The project includes a rich set of interactive visualization reports to analyze:
+
+- Distribution of physicochemical properties
+- Correlation among features
+- Model performance metrics
+- Residual and error analysis
+
+Generate these reports using the provided command:
+```bash
+python visualize.py --report all
+```
+
+---
+
+This improved usage guide ensures clarity and ease of use for both end-users and developers, providing all the necessary steps to install, run, and extend the wine quality analysis system.
 ### Graph 1: Histogram of Feature Distributions
 ![Histogram](images/1.png)
 **📊 What it Represents:**  
