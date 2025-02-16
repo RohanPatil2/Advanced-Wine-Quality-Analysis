@@ -1,6 +1,5 @@
 # 🍷 Advanced Wine Quality Analysis
 
-![Project Logo](https://via.placeholder.com/150x50.png?text=Wine+Quality+AI) 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
@@ -49,22 +48,24 @@ Dataset: 6,497 wines (1,599 red, 4,898 white) from UCI Machine Learning Reposito
 - pip >=20.0
 
 # Clone repository
+'''
 git clone https://github.com/yourusername/wine-quality-analysis.git
 cd wine-quality-analysis
-
+'''
 # Create virtual environment
+'''
 python -m venv venv
 source venv/bin/activate  # Linux/MacOS
 venv\Scripts\activate  # Windows
+'''
 
 # Install dependencies
+'''
 pip install -r requirements.txt
 :package: Commands
-bash
-Copy
 # Run full analysis pipeline
 python main.py --full-analysis
-
+'''
 # Start prediction API
 uvicorn api.wine_api:app --reload
 
