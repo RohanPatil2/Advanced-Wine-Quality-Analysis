@@ -553,8 +553,64 @@ curl -X POST "http://api.winequality.ai/predict" \
 ---
 
 ## 📚 References
-1. UCI Wine Quality Dataset
-2. SHAP Documentation
-3. XGBoost Official Guide
+1. **UCI Wine Quality Dataset:** The dataset is sourced from the UCI Machine Learning Repository, which offers a rich collection of real-world datasets for research purposes.
+2. **SHAP Documentation:** Comprehensive guides and documentation for SHAP (SHapley Additive exPlanations) that facilitate model interpretability.
+3. **XGBoost Official Guide:** Detailed documentation and tutorials on using XGBoost for robust, gradient boosting-based modeling.
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+---
+
+## :cherry_blossom: Community & Contributions
+
+We welcome contributions from the community to enhance this project. Whether you're fixing bugs, improving documentation, or adding new features, your input is valuable.
+
+**How to Contribute:**
+- **Fork the Repository:** Create your own copy of the project.
+- **Create a Branch:** Start a new branch from the `dev` branch for your feature or fix.
+- **Adhere to Guidelines:** Follow the established coding style, ensure all tests pass, and include clear commit messages.
+- **Submit a Pull Request:** Once your changes are ready, submit a pull request for review.
+
+**Branching Strategy:**
+- **main:** Contains the stable, production-ready code.
+- **dev:** Active development and integration of new features.
+- **feature/xxx:** Specific branches for individual features or improvements.
+
+For any questions, suggestions, or issues, please open an issue on the GitHub repository.
+
+---
+
+## :question: FAQ
+
+1. **Can I use this project for commercial purposes?**  
+   Yes, the project is released under the MIT License, which permits commercial use. Please review the license for details.
+
+2. **Do I need a GPU for training the models?**  
+   A GPU is not required, but it can significantly accelerate model training. The project is fully functional on CPU as well.
+
+3. **How do I deploy this project?**  
+   Detailed deployment instructions are provided in the **Deployment** section, including steps for containerization with Docker and AWS EC2 setup.
+
+---
+
+## :page_facing_up: Additional Resources
+
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)  
+- [SHAP Documentation](https://shap.readthedocs.io/)  
+- [XGBoost Documentation](https://xgboost.readthedocs.io/)
+
+---
+
+## :star2: Credit & Acknowledgments
+
+- **Core Team:** Special thanks to the project maintainers and core team members for their leadership and contributions.
+- **Contributors:** We extend our gratitude to all contributors who have provided code improvements, bug fixes, and enhancements.
+- **Special Thanks:** A heartfelt thank you to the UCI Machine Learning Repository for the dataset and to the open-source community for their continuous support.
+
+---
+
+## :lock: License
+
+This project is licensed under the [MIT License](LICENSE), allowing for wide usage, modification, and distribution in both open-source and commercial applications.
+
+---
+
+We appreciate your interest in the Advanced Wine Quality Analysis project and look forward to your contributions and feedback!
