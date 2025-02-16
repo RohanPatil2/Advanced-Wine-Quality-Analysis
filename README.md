@@ -48,7 +48,6 @@ Dataset: 6,497 wines (1,599 red, 4,898 white) from UCI Machine Learning Reposito
 - Python 3.8+
 - pip >=20.0
 
-```bash
 # Clone repository
 git clone https://github.com/yourusername/wine-quality-analysis.git
 cd wine-quality-analysis
