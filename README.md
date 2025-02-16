@@ -551,10 +551,53 @@ curl -X POST "http://api.winequality.ai/predict" \
 ```
 
 ---
-# Cell 10: Quantum Leap (Experimental)
-This section represents an experimental phase of the project where we explore novel methodologies and cutting-edge techniques to further enhance wine quality prediction. Quantum Leap (Experimental) serves as a sandbox for testing innovative ideas that may eventually be integrated into the core system.
-Note: This cell is under active development. Contributions and feedback on these experimental features are highly encouraged.
+Below is an updated README section for **Cell 10: Quantum Leap (Experimental)**, including the experimental code snippet:
 
+---
+
+## # Cell 10: Quantum Leap (Experimental)
+
+This section represents an experimental phase of the project where we explore novel methodologies and cutting-edge techniques to further enhance wine quality prediction. **Quantum Leap (Experimental)** serves as a sandbox for testing innovative ideas that may eventually be integrated into the core system.  
+*Note: This cell is under active development. Contributions and feedback on these experimental features are highly encouraged.*
+
+```python
+# Cell 10: Quantum Leap (Experimental)
+try:
+    from qiskit import QuantumCircuit
+    from qiskit_machine_learning.neural_networks import SamplerQNN
+    import numpy as np
+
+    class QuantumWineModel:
+        """Quantum-enhanced wine quality predictor"""
+
+        def __init__(self, n_qubits=4):
+            self.n_qubits = n_qubits
+            self.qc = QuantumCircuit(n_qubits)
+            # Initialize the quantum circuit with Hadamard gates and rotation gates
+            self.qc.h(range(n_qubits))
+            self.qc.ry(np.pi/4, range(n_qubits))
+
+            # Initialize the Sampler Quantum Neural Network
+            self.qnn = SamplerQNN(
+                circuit=self.qc,
+                input_params=[],    # Define input parameters if needed
+                weight_params=[],   # Define weight parameters if needed
+                interpret=lambda x: np.argmax(x)
+            )
+
+        def fit(self, X, y):
+            """Quantum training loop (placeholder)"""
+            print("Quantum training is not implemented yet.")
+
+except ImportError:
+    print("Quantum components require Qiskit installation")
+```
+
+---
+
+This experimental module leverages **Qiskit** and the **qiskit_machine_learning** package to create a quantum-enhanced model for wine quality prediction. At this stage, the training functionality is a placeholder, and the primary purpose is to demonstrate how quantum circuits can be integrated into the predictive framework.
+
+We invite contributors and researchers to extend this module and help realize the potential of quantum computing in this domain.
 ## 📚 References
 1. **UCI Wine Quality Dataset:** The dataset is sourced from the UCI Machine Learning Repository, which offers a rich collection of real-world datasets for research purposes.
 2. **SHAP Documentation:** Comprehensive guides and documentation for SHAP (SHapley Additive exPlanations) that facilitate model interpretability.
